@@ -1,1 +1,53 @@
+package ProjetosSimples;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SistemaCadastro {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Aluno> listaAlunos = new ArrayList<>();
+        int opcao;
+
+        do{
+            System.out.println("\n-----Menu De Cadastro-----");
+            System.out.println(" 1 - Cadastar Aluno ");
+            System.out.println(" 2 - Listar Alunos ");
+            System.out.println(" 3 - Sair ");
+            System.out.println(" Escolha uma Opção Acima: ");
+            opcao = scanner.nextInt();
+            scanner.nextLine();
+
+
+            if (opcao ==1){
+                System.out.println("Nome do Aluno: ");
+                String nome = scanner.nextLine();
+
+                System.out.println("Nota do Aluno: ");
+                double nota = scanner.nextDouble();
+
+                Aluno novoAluno = new Aluno(nome, nota);
+                listaAlunos.add(novoAluno);
+                System.out.println("Aluno Cadastrado! ");
+
+            }else if (opcao == 2){
+                System.out.println("\n-- Lista De Aunos --");
+                if(listaAlunos.isEmpty()){
+                    System.out.println("Nenhum Aluno Cadastrado ");
+                }else{
+                    for(Aluno a : listaAlunos){
+                        a.exibirDados();
+                    }
+                }
+
+            }
+
+        }while(opcao !=3);
+
+        System.out.println("Sistema Encerrado. ");
+        scanner.close();
+
+    }
+    
+}
 
