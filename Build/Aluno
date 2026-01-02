@@ -1,0 +1,16 @@
+package ProjetosSimples;
+
+public class Aluno {
+    String nome;
+    double nota;
+
+    public Aluno (String nome, Double nota ){
+        this.nome = nome ;
+        this.nota = nota ;
+    }
+    
+    public void exibirDados(){
+        System.out.println("Nome: " + nome + " | Nota: " + nota );
+
+    }
+}
