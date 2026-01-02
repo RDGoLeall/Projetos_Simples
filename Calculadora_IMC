@@ -6,16 +6,27 @@ public class CalculadoraIMC {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Ola esse e uma Calculadora de IMC(Índice de Massa Corporal)");
-        System.err.println( "Insira sua altura: ");
+
+        System.out.println( "Insira sua altura (ex: 1,80): ");
         double altura = scanner.nextDouble();
 
-        System.out.println("Insira seu peso: ");
+        System.out.println("Insira seu peso (ex: 70,5): ");
         double peso = scanner.nextDouble();
 
 
-        double resultado = altura / peso ;
+        double resultado = peso / (altura * altura);
 
-        System.out.println("Seu IMC(Índice de Massa Corporal) é: " + resultado );
+        if (resultado < 18.5){
+            System.out.println("Abaixo do Peso! ");
+        }else if (resultado >= 18.5 && resultado < 25){
+            System.out.println("Peso Ideal! ");
+        }else if (resultado>= 25 && resultado <30){
+            System.out.println("Soprepeso! ");
+        }else{
+            System.out.println("Obesidade!");
+        }
+
+           System.out.printf("Seu IMC é: %.2f%n", resultado);
 
         scanner.close();
 
