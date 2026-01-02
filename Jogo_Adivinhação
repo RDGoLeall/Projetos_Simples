@@ -1,0 +1,37 @@
+package ProjetosSimples;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class JogoAdivinhacao {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random =new Random();
+
+        int NumeroSecreto = random.nextInt(100) + 1;
+        int Palpite = 0;
+        int Teantaivas = 0;
+
+
+        System.out.println("Bem vindo ao Jogo D o Adivinha! ");
+        System.out.println("Eu escolhi um numero de um a 100, tente acertar qual");
+
+        do{
+            System.out.println("Diga seu Palpite: ");
+            Palpite = scanner.nextInt();
+            Teantaivas++;
+            
+            if(Palpite < NumeroSecreto ){
+                System.out.println("Numero muito Baixo, digite outro ");
+            }else if(Palpite > NumeroSecreto ){
+                System.out.println("Namero muito Alto, tente outro");
+            }else {
+                System.out.println("Parabéns,Vocé acertou em " + Teantaivas + " Tentativas ");
+            }
+        } while (Palpite != NumeroSecreto);
+
+        scanner.close();
+
+    }
+    
+}
