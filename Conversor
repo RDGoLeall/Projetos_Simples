@@ -1,0 +1,72 @@
+package ProjetosSimples;
+
+import java.util.Scanner;
+
+public class Conversor {
+    
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        
+        int opcao = 0;
+
+        do {
+            System.out.println("\n -- Conversor -- ");
+            System.out.println(" 1 - Conversor de moedas ");
+            System.out.println(" 2 - Conversor de Temperatura ");
+            System.out.println(" 3 - Sair ");
+            System.out.println(" Escolha uma Opção Acima ");
+
+            opcao = scanner.nextInt();
+
+
+            switch(opcao){
+                case 1:
+                    converterMoeda();
+                    break;
+                case 2:
+                    converterTemperatura();
+                    break;
+                case 3:
+                    System.out.println("Saindo ");
+                    break;
+                default:
+                    System.out.println("Opção Invalida! ");    
+            }
+
+        } while (opcao != 3 );
+
+        scanner.close();
+    }
+
+    public static void converterMoeda(){
+
+        System.out.println("\n -- Moedas-- ");
+        System.out.println(" Digite um Valor em Reais (R$):  ");
+
+        double reais = scanner.nextDouble();
+
+        double cotacaoDolar = 5.20;
+        double cotacaoEuro = 6.20;
+
+        double dolares = reais / cotacaoDolar;
+        double euros = reais / cotacaoEuro;
+
+        System.out.printf(" Em Dólares: US$ %.2f%n ", dolares);
+        System.out.printf(" Em Euro: € %.2f%n ", euros);    
+    }
+
+    public static void converterTemperatura(){
+
+        System.out.println("\n -- Temperatura -- ");
+        System.out.println("Digite a temperatura me Celcios (°C) ");
+        double celsius = scanner.nextDouble();
+
+        double fahrenheit = (celsius * 9/5) + 32;
+        double kelvin = celsius + 273.15;
+
+        System.out.printf("Fahrenheit: %.1f °F%n", fahrenheit);
+        System.out.printf("Kelvin: %.1f K%n", kelvin);
+    }
+
+}
