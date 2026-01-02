@@ -1,0 +1,23 @@
+package ProjetosSimples;
+import java.util.Scanner;
+
+public class CalculadoraIMC {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ola esse e uma Calculadora de IMC(Índice de Massa Corporal)");
+        System.err.println( "Insira sua altura: ");
+        double altura = scanner.nextDouble();
+
+        System.out.println("Insira seu peso: ");
+        double peso = scanner.nextDouble();
+
+
+        double resultado = altura / peso ;
+
+        System.out.println("Seu IMC(Índice de Massa Corporal) é: " + resultado );
+
+        scanner.close();
+
+    }
+}
